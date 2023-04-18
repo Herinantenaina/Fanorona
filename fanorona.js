@@ -7,7 +7,7 @@ var emplacement = document.querySelectorAll(".for_piece");
 let positionLeft = [];
 let positionTop = [];
 var victory = false ;
-
+let x,y,t;
 let something_here = [
   false,false,false,
   false,false,false,
@@ -71,10 +71,11 @@ function si_vide(pieceS){
 function move(piece){
   piece.addEventListener("mousedown",mousedown);
    function mousedown(e){
+      t= 0;
       this.style.zIndex = 1000;
       isDown = true;
       let offset= [0,0];
-      offset=[
+          offset=[
               this.getBoundingClientRect().left - e.clientX  ,
               this.getBoundingClientRect().top  - e.clientY 
       ];
@@ -96,22 +97,27 @@ function move(piece){
                   piece.style.left = 100 + "px";
                 }
                 Occupied[i] = true ;
-              }  
+              }
+               
             }
           
-
+            
             //---Enlève les itérations---  
             piece.removeEventListener("mouseup",mouseup);
             check();
             //----VICTOIRE !!!----- 
             Victoire();
           }
-
-    piece.addEventListener("mousemove",mousemove);
+          t +=1 ; 
+            console.log("  ")
+            console.log(t)
+      piece.addEventListener("mousemove",mousemove);
       function mousemove(event){
-        let x = event.clientX ;
-        let y = event.clientY ;
-      
+        let x1 = event.clientX ;
+        let y1 = event.clientY ;
+        x = x1;
+        y = y1;
+        let styleX = piece.style.left;
         if(isDown){
           piece.style.left = (x + offset[0]) + "px";
           piece.style.top = (y  + offset[1] )+ "px";
