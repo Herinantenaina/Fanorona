@@ -100,7 +100,7 @@ function move(piece){
             }
           
 
-            //---Enlève les itiretions---  
+            //---Enlève les itérations---  
             piece.removeEventListener("mouseup",mouseup);
             check();
             //----VICTOIRE !!!----- 
@@ -172,8 +172,6 @@ function check(){
       }
     }
   }
-  console.log(Occupied)
-  console.log(positionLeft)
   //---Victoire---
    if(color[0] == color[1] && color[0] != null)
     {
