@@ -13,7 +13,7 @@
   "routes": [
     {
       "src": "/.*",
-      "dest": "/fanorona.html"  // Or index.html
+      "dest": "/fanorona.html"
     }
   ]
 }
