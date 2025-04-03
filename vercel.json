@@ -2,18 +2,22 @@
   "version": 2,
   "builds": [
     {
-      "src": "*.html",
+      "src": "fanorona.html",
       "use": "@vercel/static"
     },
     {
-      "src": "*.{js,css}",
+      "src": "fanorona.js",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "styles.css",
       "use": "@vercel/static"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/fanorona.html"
+      "dest": "/$1"
     }
   ]
 }
