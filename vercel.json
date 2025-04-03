@@ -1,5 +1,9 @@
 {
      "routes": [
+      {     
+       "src": "/.*\\.(js|css|png|jpg|svg|json)$",  // Allow JS, CSS, images, etc.
+       "dest": "/$0"  // Serve the actual file
+     },  
      {
        "src": "/(.)*",
        "dest": "/fanorona.html"        
